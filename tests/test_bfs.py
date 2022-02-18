@@ -7,6 +7,7 @@ from algorithms.bfs import (
 
 import unittest
 
+flag = [0]*6
 
 class TestCountIslands(unittest.TestCase):
 
@@ -25,10 +26,14 @@ class TestMazeSearch(unittest.TestCase):
 
     def test_maze_search(self):
         grid_1 = [[1,0,1,1,1,1],[1,0,1,0,1,0],[1,0,1,0,1,1],[1,1,1,0,1,1]]
-        self.assertEqual(14, maze_search(grid_1))
+        self.assertEqual(14, maze_search(grid_1, flag))
+        for i in range(len(flag)):
+            print("Branch ", i, ": ", flag[i])
+        print("\n")
         grid_2 = [[1,0,0],[0,1,1],[0,1,1]]
-        self.assertEqual(-1, maze_search(grid_2))
-
+        self.assertEqual(-1, maze_search(grid_2, flag))
+        for i in range(len(flag)):
+            print("Branch ", i, ": ", flag[i])
 
 class TestWordLadder(unittest.TestCase):
 
