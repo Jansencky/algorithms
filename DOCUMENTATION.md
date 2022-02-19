@@ -135,6 +135,14 @@ The project was easy to get started and running. No extra components or tools we
    CC = 14
    NLOC = 22
 
+   ### maze_search:
+   ./algorithms/bfs/maze_search.py
+   maze_search@29-66@
+
+   CC = 12
+   NLOC = 
+   **CC_Manual = 10**
+
    * Are the results clear?
 
    The results are mostly clear, bar one function which did not return the same cyclomatic complexity as the *Lizard* tool. Every other function returned the same result during the manual count as well as the automatic count. While we are not entirely certain as to why, we did perform certain experiments to assess how Lizard calculates the cyclomatic complexity of the functions, but as the tool is not open we could not come to any conclusive results. We do speculate however, as the Lizard tool itself states in its documentation: "This tool actually calculates how complex the code ‘looks’ rather than how complex the code really ‘is’", there might be some discrepancies regarding functions of a higher complexity as those become more complex.
@@ -183,6 +191,8 @@ While the sample size of this assignment is small, there seems to be no correlat
 
    The function takes an m x n matrix of non-negative integers representing the height of each unit cell in a continent and return the position with parameters.
 
+   ### maze_search:
+   The function takes BFS from (0,0) of the grid and get the minimum number of steps needed to get to the lower right column.
 
 4. Are exceptions taken into account in the given measurements?
 
@@ -220,11 +230,16 @@ its output?
 ### Evaluation
 
 1. How detailed is your coverage measurement?
+   While the coverage for maze_search is mostly accurate, the two for loop for constructing the is_visited array is not covered as the height and weight must be integers and thus will always be passed.
 2. What are the limitations of your own tool?
+
 3. Are the results of your tool consistent with existing coverage tools?
+   The result of my tool is sonsistent with existing coverage tools, as both has recorded 2 misses, to check the function below.
+   '''bash
+   maze[initial_x][initial_y] == BLOCKED:
+   '''
 
 ## Coverage improvement
-
 Show the comments that describe the requirements for the coverage.
 Report of old coverage: [link]
 Report of new coverage: [link]
