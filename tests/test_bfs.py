@@ -34,6 +34,17 @@ class TestMazeSearch(unittest.TestCase):
         self.assertEqual(-1, maze_search(grid_2, flag))
         for i in range(len(flag)):
             print("Branch ", i, ": ", flag[i])
+        grid_3 = [[0,0,0],[0,1,1],[0,1,1]]
+        self.assertEqual(-1, maze_search(grid_3, flag))
+        for i in range(len(flag)):
+            print("Branch ", i, ": ", flag[i])
+        print("\n")
+        grid_1 = [[0,0,1,1,1,1],[1,0,1,0,1,0],[1,0,1,0,1,1],[1,1,1,0,1,1]]
+        self.assertEqual(14, maze_search(grid_1, flag))
+        for i in range(len(flag)):
+            print("Branch ", i, ": ", flag[i])
+        print("\n")
+        
 
 class TestWordLadder(unittest.TestCase):
 
