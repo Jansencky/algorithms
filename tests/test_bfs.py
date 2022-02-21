@@ -34,13 +34,28 @@ class TestMazeSearch(unittest.TestCase):
         self.assertEqual(-1, maze_search(grid_2, flag))
         for i in range(len(flag)):
             print("Branch ", i, ": ", flag[i])
+        print("\n")
+        
         grid_3 = [[0,0,0],[0,1,1],[0,1,1]]
         self.assertEqual(-1, maze_search(grid_3, flag))
         for i in range(len(flag)):
             print("Branch ", i, ": ", flag[i])
         print("\n")
-        grid_1 = [[0,0,1,1,1,1],[1,0,1,0,1,0],[1,0,1,0,1,1],[1,1,1,0,1,1]]
-        self.assertEqual(14, maze_search(grid_1, flag))
+
+        grid_4 = [[0,0,1,1,1,1],[1,0,1,0,1,0],[1,0,1,0,1,1],[1,1,1,0,1,1]]
+        self.assertEqual(-1, maze_search(grid_4, flag))
+        for i in range(len(flag)):
+            print("Branch ", i, ": ", flag[i])
+        print("\n")
+
+        grid_5 = [[0,0,0,0,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0]]
+        self.assertEqual(-1, maze_search(grid_5, flag))
+        for i in range(len(flag)):
+            print("Branch ", i, ": ", flag[i])
+        print("\n")
+
+        grid_6 = [[1,1,1,1,1,1],[1,1,1,1,1,1],[1,1,1,1,1,1],[1,1,1,1,1,1]]
+        self.assertEqual(8, maze_search(grid_6, flag))
         for i in range(len(flag)):
             print("Branch ", i, ": ", flag[i])
         print("\n")
