@@ -140,7 +140,7 @@ The project was easy to get started and running. No extra components or tools we
    maze_search@29-66@
 
    CC = 12
-   NLOC = 
+   NLOC = 37
    **CC_Manual = 10**
 
    * Are the results clear?
@@ -168,6 +168,7 @@ While the sample size of this assignment is small, there seems to be no correlat
    #### maximum_flow_dfs
 
    Calculates the maximum flow through a graph given an adjencency list using depth for search.
+
    #### three_sum
 
    In a list of integers, find a set of three distinct integers that adds up to 0.
@@ -229,8 +230,12 @@ its output?
 
 ### Evaluation
 
+   #### maze_search
+
 1. How detailed is your coverage measurement?
+   
    While the coverage for maze_search is mostly accurate, the two for loop for constructing the is_visited array is not covered as the height and weight must be integers and thus will always be passed.
+
 2. What are the limitations of your own tool?
 
 3. Are the results of your tool consistent with existing coverage tools?
