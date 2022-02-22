@@ -230,7 +230,16 @@ its output?
 
 ### Evaluation
 
-   #### maze_search
+   ### maze_search:
+   As both count_islands and pacific_atlantic has a 100% test coverage, an alternative maze_search has been chosen. The function takes BFS from (0,0) of the grid and get the minimum number of steps needed to get to the lower right column. Belows are additional information for maze_search:
+
+   ./algorithms/bfs/maze_search.py
+   maze_search@29-66@
+
+   CC = 12
+   NLOC = 37
+   **CC_Manual = 10**
+
 
 1. How detailed is your coverage measurement?
    
