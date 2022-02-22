@@ -50,9 +50,7 @@ def maze_search(maze, flag):
     while queue:
         x, y, steps = queue.popleft()
 
-        if x == target_x and y == target_y:
-            flag[3] += 1
-            return steps
+        confirm_target(x, y, target_x, target_y, flag)
 
         for dx, dy in directions:
             new_x = x + dx
@@ -74,3 +72,9 @@ def maze_search(maze, flag):
 
 def maze_search_is_visited_array(UNVISITED, width, height):
     return [[UNVISITED for w in range(width)] for h in range(height)]
+
+def confirm_target(x, y, target_x, target_y, flag):
+    if x == target_x and y == target_y:
+        flag[3] += 1
+        return steps
+    return
