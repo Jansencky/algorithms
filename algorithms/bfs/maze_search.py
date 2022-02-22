@@ -44,7 +44,7 @@ def maze_search(maze, flag):
 
     queue = deque([(initial_x, initial_y, 0)])
 
-    is_visited = [[UNVISITED for w in range(width)] for h in range(height)]
+    is_visited = maze_search_is_visited_array(UNVISITED, width, height)
     is_visited[initial_x][initial_y] = VISITED
 
     while queue:
@@ -72,3 +72,5 @@ def maze_search(maze, flag):
 
     return -1 
 
+def maze_search_is_visited_array(UNVISITED, width, height):
+    return [[UNVISITED for w in range(width)] for h in range(height)]
